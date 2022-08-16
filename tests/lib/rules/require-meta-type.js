@@ -76,9 +76,16 @@ ruleTester.run('require-meta-type', rule, {
       `,
       errors: [{ messageId: 'missing' }],
     },
-    // Spread.
+    // Spread in meta.
     `
       const extra = { type: 'problem' };
+      module.exports = {
+        meta: { ...extra },
+        create(context) {}
+      };
+    `,
+    // Spread in meta with no static value.
+    `
       module.exports = {
         meta: { ...extra },
         create(context) {}

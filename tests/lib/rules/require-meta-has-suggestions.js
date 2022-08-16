@@ -195,6 +195,15 @@ ruleTester.run('require-meta-has-suggestions', rule, {
         }
       };
     `,
+    // Spread in meta with no static value.
+    `
+      module.exports = {
+        meta: { ...extra },
+        create(context) {
+          context.report({node, message, suggest: [{}]});
+        }
+      };
+    `,
     // Spread in report.
     `
       module.exports = {

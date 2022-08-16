@@ -146,9 +146,16 @@ ruleTester.run('require-meta-schema', rule, {
       code: 'module.exports = { create(context) {} };',
       options: [{ requireSchemaPropertyWhenOptionless: false }],
     },
-    // Spread.
+    // Spread in meta.
     `
       const extra = { schema: [] };
+      module.exports = {
+        meta: { ...extra },
+        create(context) {}
+      };
+    `,
+    // Spread in meta with no static value.
+    `
       module.exports = {
         meta: { ...extra },
         create(context) {}

@@ -199,6 +199,15 @@ ruleTester.run('require-meta-fixable', rule, {
         }
       };
     `,
+    // Spread in meta with no static value.
+    `
+      module.exports = {
+        meta: { ...extra },
+        create(context) {
+          context.report({node, message, fix: foo});
+        }
+      };
+    `,
     // Spread in report.
     {
       code: `
