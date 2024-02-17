@@ -1,4 +1,67 @@
+## [3.0.0](https://github.com/bmish/eslint-plugin-eslint-plugin/compare/v2.1.0...v3.0.0) (2024-02-17)
 
+
+### ⚠ BREAKING CHANGES
+
+* Update `no-missing-placeholders` and `no-unused-placeholders` to handle messageIds ([#252](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/252))
+* Requires ESLint@^7.x
+
+### Breaking
+
+* drop eslint &lt; 7 & node.js < 10 ([#95](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/95)) ([59ddffc](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/59ddffcd0c4f1e293883838264daa7a29da04db7))
+
+
+### Features
+
+* Add new rules `no-missing-message-ids` and `no-unused-message-ids` ([#254](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/254)) ([067e8aa](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/067e8aa35d916e97e5091be3cd21f09ff00d77ed))
+* detect function-style rules exported using a variable ([#235](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/235)) ([e388a3a](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/e388a3a349769fc0f412b68090401079893218f2))
+* Detect nested test cases ([#249](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/249)) ([b33aa00](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/b33aa0025f5f6bce41f1799f00aecb5778bca720))
+* handle properties behind spread syntax in `require-meta-*` rules ([#251](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/251)) ([abefd1e](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/abefd1efc9d9adc0142b2c7527af8d5f3ec60377))
+* Update `no-missing-placeholders` and `no-unused-placeholders` to handle messageIds ([#252](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/252)) ([047b0b5](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/047b0b56bd61c88122518644e8a6f9b5ab7255bb))
+
+
+### Bug Fixes
+
+* `require-meta-schema`: Fix false positive ([#111](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/111)) ([9f4f461](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/9f4f461969b0f89d40219198423b39eea7b63d1e))
+* allow additional schema types in require-meta-schema ([#277](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/277)) ([5bf0648](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/5bf0648f50213fa30e9b623a8db376f41a3af411))
+* Avoid crash when provided suggestions array has non-object ([#216](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/216)) ([c3d85ab](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/c3d85ab53b49a3b3eccd817322168c0158e306e1))
+* Avoid crash with non-static value of `hasSuggestions` in `require-meta-has-suggestions` rule ([#163](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/163)) ([5c83cd9](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/5c83cd9d0b49adfc408936511b560f957d3cbbcb))
+* Change autofix to suggestion in `require-meta-schema` rule ([#185](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/185)) ([afc1514](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/afc15149779647265b23ba8c4c181376eeb58795))
+* Check for meta type even when using a function reference ([#84](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/84)) ([38ad521](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/38ad521963b4e10d001ef91314a637c1028972cf))
+* clarify report messages for no-missing-placeholders and no-unused-placeholders ([#278](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/278)) ([f5a5c24](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/f5a5c2458e79c405f5a47c802dbca111301f635c))
+* correctly handle rules that are missing `meta` or have `meta` / `create` defined in variables ([#225](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/225)) ([badd4eb](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/badd4eb02621bd1a9b09aaf26b1bdc7b378ef899))
+* detect rules exported using a variable ([#233](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/233)) ([ae68f6b](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/ae68f6b2a593e4ddf16a7c7007b2c9990b5a4a4b))
+* detect rules with TypeScript `export = rule` syntax ([#267](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/267)) ([8e66bf7](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/8e66bf744448b8a3c64bf32c5ba893d16fa7f3ac))
+* Ensure `require-meta-*` rules test null/undefined property values ([#164](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/164)) ([990f8f6](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/990f8f6ab1bb7bf60939e2455ea3fae086bb90ae))
+* ensure rules bail out early when no rule present ([#293](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/293)) ([d1e03a1](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/d1e03a1b65ae37f2e842d802c87237217e9ff136))
+* export package.json (fixes [#270](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/270)) ([#271](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/271)) ([5cb12cc](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/5cb12cc5a01163966d506c7ee3c1b6c88c174ddb))
+* False negative in `prefer-message-ids` rule ([#173](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/173)) ([c5c4b62](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/c5c4b62be720768aeb13c55b003566d2c38211cb))
+* False negative with TypeScript rules that don't have type parameters (fixes [#202](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/202)) ([#209](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/209)) ([f8a642a](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/f8a642ac01fd153d5cde552a94d24371bae42e7c))
+* false positive with no-unused-message-ids from external violation reporting function ([#286](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/286)) ([01d0eef](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/01d0eef2885b1626642d925735c9cb59c1e611b8))
+* false positives with violation reporting helper function in `no-unused-message-ids` rule ([#290](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/290)) ([1c30165](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/1c301653a1bd120b121029c83d2d0914615cf9a5))
+* Fix false negatives and reporting location in `require-meta-type` ([#155](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/155)) ([7c0d1d0](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/7c0d1d06050d3e68de7623a81d4022886ae457a6))
+* Fix false positive with empty array variable in `require-meta-has-suggestions` rule ([#171](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/171)) ([fffa881](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/fffa881fdaf1575834832e0e16df2cddb913008c))
+* Handle `meta: {} as const` for TypeScript rules ([#219](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/219)) ([08df927](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/08df92755f45b7d8f16a9efc7dd7514cb1ab9cf2))
+* handle different rule file extensions like `.ts` in `require-meta-docs-url` rule ([#224](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/224)) ([6a09dbe](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/6a09dbeb128d46a21b0b97f13d31af796f7e77b3))
+* handle spread in context.report() in require-meta-fixable ([#288](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/288)) ([d768112](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/d7681123fe78c64a87f52fb719e83bdb3995b7c6))
+* handle spread in context.report() in require-meta-has-suggestions ([#287](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/287)) ([fdffb50](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/fdffb501bf62e25bc59a2f960abb0bcc9327e81d))
+* handle spreads in rule meta objects ([#100](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/100)) ([45a09a6](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/45a09a67942c55230fcae893633c1911b089a514))
+* handle suggestions in helper function outside rule or inside nested spread/ternary in `require-meta-has-suggestions` rule ([#291](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/291)) ([aa133a9](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/aa133a93a95f401619325e22e96b432e40f34f57))
+* Improve detection of fix functions that never return a fix in `fixer-return` rule ([#143](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/143)) ([65cfb2c](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/65cfb2cd78484f2072bb1f150d07c6fa299579ed))
+* Improve detection of static `description` strings and ignore non-static descriptions in `require-meta-docs-description` rule ([#113](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/113)) ([1840a53](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/1840a53d98fd602feae20219d37510ecbe30fd74))
+* Improve detection of static `url` strings in `require-meta-docs-url` rule ([#162](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/162)) ([0459f12](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/0459f1288cda0174ec4622862d3e6d60eaff3889))
+* improve detection of static arguments of context.report() in several rules ([#129](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/129)) ([6d5be9f](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/6d5be9fb3e2e4c4c19d0c20a8f4a33867573e3fa))
+* Improve violation reporting location for `no-unused-placeholders` ([#279](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/279)) ([27c0b65](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/27c0b6558a9531c3b87a2776b1553adf29834e87))
+* only autofix in require-meta-schema rule when no options present ([#184](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/184)) ([d2d165d](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/d2d165dd70686f77a7204f9e4bf7a048a5e42942))
+* Only consider functions with a single argument as function-style rules ([#213](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/213)) ([86bf1f9](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/86bf1f9acd100d9c6d91ac7c0dba8340afc75c7e))
+* Remove erroneous schema from require-meta-schema rule ([#178](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/178)) ([2f9b2b0](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/2f9b2b0671ebbcd3e76cf746d83371b131e375ac))
+* reporting location in no-missing-placeholders ([#280](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/280)) ([31ff45c](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/31ff45c8840b90f575800ccbb7a35d1ba09c2ba8))
+* Rule can't find reference of `create` function ([#107](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/107)) ([eb501fc](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/eb501fc57efa602d2d57769e4d09cda2b24b53bf))
+* support eslint v6 ([#172](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/172)) ([f7384ad](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/f7384ad76a0511cde29444256e16e9d273384cb0))
+* update `require-meta-schema` rule to allow object schemas (in addition to array schemas) ([#90](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/90)) ([e582cb6](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/e582cb61d0f51c15a8e5d9e38c82d1c73f2d6edd))
+* update fixer-return rule to handle arrow function expressions ([#144](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/144)) ([6762a3f](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/6762a3fa61fde2e9ae43576bd695d31da7ab5736))
+* update repo link ([#300](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/300)) ([07cd4ab](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/07cd4abb13002cb9f055b2aaf0f6110f0ee938b9))
+* Use token utilities from eslint-utils ([#156](https://github.com/bmish/eslint-plugin-eslint-plugin/issues/156)) ([5ac45f0](https://github.com/bmish/eslint-plugin-eslint-plugin/commit/5ac45f08bb943c097d3d10ee088a4a8f4f8e4de8))
 
 ### [5.0.6](https://github.com/eslint-community/eslint-plugin-eslint-plugin/compare/v5.0.5...v5.0.6) (2022-08-23)
 
